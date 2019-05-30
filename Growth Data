@@ -1,0 +1,18 @@
+download.file("https://raw.githubusercontent.com/markziemann/SLE712_files/master/week10_files/growth_data.csv","growth_data.csv") #Code to download the "growth_data.csv" file 
+a <-read.table("growth_data.csv", header = T, sep = ",") #Code to read the .csv file by assigning the file data to “a” 
+a #Code to view a
+str(a) #Displaying the structure of the dataset 
+NE <- subset(a, Site=="northeast") #Making a subset of data called “NE” which contain the data of Site “northeast” 
+NE #Code to view NE
+SW <- subset(a, Site=="southwest") #Making a subset of data called “SW” which contain the data of Site “southwest” 
+SW #Code to view SW
+mean(NE$Circumf_1999_cm) #The mean value of “Circumf_1999_cm” column in the subset “NE”
+mean(SW$Circumf_1999_cm) #The mean value of “Circumf_1999_cm” column in the subset “SW”
+sd (NE$Circumf_1999_cm) #The standard deviation of “Circumf_1999_cm” column in the subset “NE”
+sd (SW$Circumf_1999_cm) #The standard deviation of “Circumf_1999_cm” column in the subset “SW”
+mean(NE$Circumf_2019_cm) #The mean value of “Circumf_2019_cm” column in the subset “NE”
+mean(SW$Circumf_2019_cm) #The mean value of “Circumf_2019_cm” column in the subset “SW”
+sd (NE$Circumf_2019_cm) #The standard deviation of “Circumf_2019_cm” column in the subset “NE”
+sd (SW$Circumf_2019_cm) #The standard deviation of “Circumf_2019_cm” column in the subset “SW”
+boxplot(NE [,c(3,6)], xlab= "Year", ylab= "Tree Circumference") #The boxplot of column 3 and 6 of subset “NE” with x axis named "Year" and y axis named "Tree Circumference" 
+boxplot(SW [,c(3,6)], xlab= "Year", ylab= "Tree Circumference") #The boxplot of column 3 and 6 of subset “SW” with x axis named "Year" and y axis named "Tree Circumference" 
