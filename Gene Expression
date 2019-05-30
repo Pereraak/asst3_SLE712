@@ -1,0 +1,12 @@
+download.file ("https://raw.githubusercontent.com/markziemann/SLE712_files/master/week10_files/gene_expression.tsv","gene_expression.tsv") #Code to download the "gene_expression.tsv" file 
+x<-read.table("gene_expression.tsv",header = T,row.names = 1) # Code to assign the file data to x and read the file data making the gene accession numbers as the row names
+x #Code to view x 
+x<-as.data.frame(x)# Converting the data of x to a dataframe and assigning it to x
+x$MEAN <-rowMeans(x) # Introducing a new column named "MEAN" to x, which contain the mean value of rows
+x #Code to view x with introduced changes
+a<-x[order(-x$MEAN),] # Assigning the decreasing order of "MEAN" to a
+head(a) # Listing the first n rows in the a
+a[1:10,] # Listing the first 10 rows in the a 
+subset(x,MEAN<10) # Making a subset of x which contain the "MEAN" less than 10
+dim(subset(x,MEAN<10)) # Taking the dimension of the subset of x which contain the "MEAN" less than 10
+pairs(x)# Making a pairs plot of the data of x
