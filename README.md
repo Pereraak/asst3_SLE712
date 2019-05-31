@@ -6,6 +6,7 @@ myscript.sh is a script to incorporate mismatches with msbar into a sequence and
 The EMBOSS tool msbar is used to mutate the sequence to assess the BLAST performance with the changing mismatch density.
 A loop has been created to run 100 test for each mismatch count introduced.
 The change of mismatch count from 275 to 525 presented a gradual drop-off of BLAST performance. 
+The changes were initially performed in a working directory which was later copied to aat3_SLE712
 
 
 # Gene Expression
